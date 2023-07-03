@@ -1,5 +1,8 @@
 package com.example.levl_app.data.pojo
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class CarsListItem(
     val brand_id: Int,
     val brand_name: String,
@@ -18,7 +21,7 @@ data class CarsListItem(
     val name: String,
     val place_id: String,
     val place_name: String,
-    val price: Any,
+    val price: String?,
     val thumbnail: String,
     val transmission_id: Int,
     val transmission_name: String,

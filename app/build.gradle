@@ -1,7 +1,10 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.8.20'
 }
+
+
 
 android {
     namespace 'com.example.levl_app'
@@ -30,7 +33,16 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    testOptions{
+        unitTests.all{
+            useJUnitPlatform()
+        }
+    }
+
 }
+
+
 
 dependencies {
 
@@ -38,5 +50,15 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.9.3'
+
+    def ktor_version = "2.3.2"
+    implementation "io.ktor:ktor-client-core:$ktor_version"
+    implementation "io.ktor:ktor-client-cio:$ktor_version"
+
+
+    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0'
+
+
 }
+
