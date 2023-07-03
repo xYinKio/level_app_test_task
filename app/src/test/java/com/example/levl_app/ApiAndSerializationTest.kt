@@ -6,6 +6,7 @@ import io.ktor.client.call.body
 import io.ktor.client.engine.cio.CIO
 import io.ktor.client.request.get
 import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.test.runTest
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import org.junit.jupiter.api.Assertions.assertEquals
@@ -17,7 +18,7 @@ private const val expected = "[{\"id\":49,\"for_sale\":0,\"brand_name\":\"Volksw
 
 class ApiAndSerializationTest {
     @Test
-    fun testGetCarsList() = runBlocking {
+    fun testGetCarsList() = runTest {
         val client = HttpClient(CIO)
         val response = client.get("http://am111.05.testing.place/api/v1/cars/list")
         val strRes = response.body() as String
@@ -25,11 +26,7 @@ class ApiAndSerializationTest {
         assertEquals(expected, strRes)
         assertDoesNotThrow { Json.decodeFromString<List<CarsListItem>>(strRes) }
 
-        Unit
-
     }
-
-
 
 
 }
