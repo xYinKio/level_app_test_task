@@ -2,6 +2,7 @@ package com.example.levl_app
 
 import com.example.levl_app.data.pojo.car_info.CarInfo
 import com.example.levl_app.data.pojo.cars_list.CarsListItem
+import com.example.levl_app.data.pojo.posts.Posts
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.engine.cio.CIO
@@ -34,6 +35,13 @@ class ApiAndSerializationTest {
         val strRes = getFromRemote("http://am111.05.testing.place/api/v1/car/32")
         assertEquals(carInfoString, strRes)
         assertDoesNotThrow { Json.decodeFromString<CarInfo>(strRes) }
+    }
+
+    @Test
+    fun testGetCarPosts() = runTest {
+        val strRes = getFromRemote("http://am111.05.testing.place/api/v1/car/32/posts")
+        assertEquals(carPostsString, strRes)
+        assertDoesNotThrow { Json.decodeFromString<Posts>(strRes) }
     }
 
     private suspend fun getFromRemote(url: String) : String{
