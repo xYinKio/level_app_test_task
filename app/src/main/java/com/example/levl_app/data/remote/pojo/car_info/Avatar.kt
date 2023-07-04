@@ -1,4 +1,4 @@
-package com.example.levl_app.data.pojo.posts
+package com.example.levl_app.data.remote.pojo.car_info
 
 import kotlinx.serialization.Serializable
 

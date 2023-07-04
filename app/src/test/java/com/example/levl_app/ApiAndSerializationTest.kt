@@ -1,8 +1,8 @@
 package com.example.levl_app
 
-import com.example.levl_app.data.pojo.car_info.CarInfo
-import com.example.levl_app.data.pojo.cars_list.CarsListItem
-import com.example.levl_app.data.pojo.posts.Posts
+import com.example.levl_app.data.remote.pojo.car_info.CarInfo
+import com.example.levl_app.data.remote.pojo.cars_list.CarsListItem
+import com.example.levl_app.data.remote.pojo.posts.Posts
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.engine.cio.CIO
