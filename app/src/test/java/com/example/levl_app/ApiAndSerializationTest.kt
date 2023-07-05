@@ -27,7 +27,6 @@ class ApiAndSerializationTest {
     fun testGetCarsList() = runTest {
         val res = source.getCarsList(10, 1)
         assertEquals(Json.decodeFromString<List<CarsListItem>>(carsListString), res)
-
     }
 
 
