@@ -10,7 +10,7 @@ import io.ktor.client.request.get
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 
-class KtorRemoteSource : RemoteSource {
+object KtorRemoteSource : RemoteSource {
 
     private val client = HttpClient(CIO)
 

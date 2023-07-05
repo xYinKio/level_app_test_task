@@ -15,7 +15,7 @@ class CarsListViewModel : ViewModel() {
         )
     ){
         CarPagingSource(
-            KtorRemoteSource()
+            KtorRemoteSource
         )
     }.flow.cachedIn(viewModelScope)
 
