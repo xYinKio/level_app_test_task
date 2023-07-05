@@ -6,6 +6,6 @@
 
     <fragment
         android:id="@+id/carListFragment"
-        android:name="com.example.levl_app.presentation.CarListFragment"
+        android:name="com.example.levl_app.presentation.car_list.CarListFragment"
         android:label="CarListFragment" />
 </navigation>

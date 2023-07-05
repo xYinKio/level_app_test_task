@@ -1,10 +1,9 @@
-package com.example.levl_app.presentation
+package com.example.levl_app.data.remote.source
 
 import android.util.Log
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.example.levl_app.data.remote.pojo.cars_list.CarsListItem
-import com.example.levl_app.data.remote.source.RemoteSource
 
 class CarPagingSource(
     private val source: RemoteSource

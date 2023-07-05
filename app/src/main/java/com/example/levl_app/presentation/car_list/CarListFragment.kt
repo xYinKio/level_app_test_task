@@ -1,4 +1,4 @@
-package com.example.levl_app.presentation
+package com.example.levl_app.presentation.car_list
 
 import android.os.Bundle
 import android.view.View
@@ -8,7 +8,7 @@ import androidx.lifecycle.lifecycleScope
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.levl_app.R
 import com.example.levl_app.databinding.FragmentCarListBinding
-import com.example.levl_app.presentation.adapter.CarListAdapter
+import com.example.levl_app.presentation.car_list.adapter.CarListAdapter
 import kotlinx.coroutines.launch
 
 class CarListFragment : Fragment(R.layout.fragment_car_list) {

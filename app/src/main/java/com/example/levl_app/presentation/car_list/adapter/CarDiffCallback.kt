@@ -1,4 +1,4 @@
-package com.example.levl_app.presentation.adapter
+package com.example.levl_app.presentation.car_list.adapter
 
 import androidx.recyclerview.widget.DiffUtil
 import com.example.levl_app.data.remote.pojo.cars_list.CarsListItem

@@ -1,4 +1,4 @@
-package com.example.levl_app.presentation.adapter
+package com.example.levl_app.presentation.car_list.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
