@@ -22,7 +22,7 @@ data class Car(
     val model_id: Int,
     val model_name: String,
     val name: String,
-    val place_id: String,
+    val place_id: String?,
     val place_name: String,
     val price: String?,
     val transmission_id: Int,
