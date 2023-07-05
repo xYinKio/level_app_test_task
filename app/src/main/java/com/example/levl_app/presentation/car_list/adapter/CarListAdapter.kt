@@ -6,7 +6,9 @@ import androidx.paging.PagingDataAdapter
 import com.example.levl_app.data.remote.pojo.cars_list.CarsListItem
 import com.example.levl_app.databinding.ListItemCarBinding
 
-class CarListAdapter : PagingDataAdapter<CarsListItem, CarListViewHolder>(CarDiffCallback()) {
+class CarListAdapter(
+    private val onCarClick: (carId: Int) -> Unit
+) : PagingDataAdapter<CarsListItem, CarListViewHolder>(CarDiffCallback()) {
 
     override fun onBindViewHolder(holder: CarListViewHolder, position: Int) {
         holder.bind(getItem(position))
@@ -15,7 +17,7 @@ class CarListAdapter : PagingDataAdapter<CarsListItem, CarListViewHolder>(CarDif
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarListViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ListItemCarBinding.inflate(inflater, parent, false)
-        return CarListViewHolder(binding)
+        return CarListViewHolder(binding, onCarClick = onCarClick)
     }
 }
 

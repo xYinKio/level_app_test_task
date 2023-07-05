@@ -6,10 +6,13 @@ import com.example.levl_app.data.remote.pojo.cars_list.CarsListItem
 import com.example.levl_app.databinding.ListItemCarBinding
 
 class CarListViewHolder(
-    private val binding: ListItemCarBinding
+    private val binding: ListItemCarBinding,
+    private val onCarClick: (carId: Int) -> Unit
 ) : ViewHolder(binding.root) {
 
     fun bind(item: CarsListItem?){
+
+        binding.root.setOnClickListener { item?.let {onCarClick(it.id)}  }
 
         binding.info.text = item?.id?.toString()
 

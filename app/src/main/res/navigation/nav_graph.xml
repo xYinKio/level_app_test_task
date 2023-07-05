@@ -7,5 +7,17 @@
     <fragment
         android:id="@+id/carListFragment"
         android:name="com.example.levl_app.presentation.car_list.CarListFragment"
-        android:label="CarListFragment" />
+        android:label="CarListFragment" >
+        <action
+            android:id="@+id/toCarInfo"
+            app:destination="@id/carInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/carInfoFragment"
+        android:name="com.example.levl_app.presentation.car_info.CarInfoFragment"
+        android:label="CarInfoFragment" >
+        <argument
+            android:name="car_id"
+            app:argType="integer" />
+    </fragment>
 </navigation>
