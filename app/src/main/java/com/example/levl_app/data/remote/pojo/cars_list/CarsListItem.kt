@@ -21,7 +21,7 @@ data class CarsListItem(
     val name: String,
     val place_id: String?,
     val place_name: String,
-    val price: String?,
+    val price: Int?,
     val thumbnail: String,
     val transmission_id: Int,
     val transmission_name: String,
