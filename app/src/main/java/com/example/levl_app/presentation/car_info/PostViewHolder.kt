@@ -15,6 +15,8 @@ class PostViewHolder(
             .load(post.img)
             .into(binding.image)
 
+        binding.post.text = post.text
+
     }
 
 }
