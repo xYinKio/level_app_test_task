@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.launch
 
-class CarInfoViewModel : ViewModel() {
+class CarInfoViewModel : ViewModel() { // Здесь имеет смысл вынести интерфейс при необходимости расширения
 
     private val source = KtorRemoteSource
 
@@ -31,10 +31,15 @@ class CarInfoViewModel : ViewModel() {
     fun update(carId: Int){
         viewModelScope.launch(Dispatchers.IO){
             launch {
-                _carInfo.emit(source.getCarInfo(carId))
+                runCatching { source.getCarInfo(carId) }
+                    .onSuccess { _carInfo.emit(it) }
+                    .onFailure { /*TODO*/ }
             }
             launch {
-                _posts.emit(source.getCarPosts(carId))
+                runCatching { source.getCarPosts(carId) }
+                    .onSuccess { _posts.emit(it)}
+                    .onFailure { /*TODO*/ }
+
             }
         }
     }
