@@ -1,6 +1,5 @@
 package com.example.levl_app.data.remote.source
 
-import android.util.Log
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.example.levl_app.data.remote.pojo.cars_list.CarsListItem
@@ -25,18 +24,14 @@ class CarPagingSource(
                 else -> params.key!!
             }
             val next = current + 1
-            val prev = current - 1
 
-            Log.d("!!!", "load ${next} ${prev} ${params.loadSize}")
             val response = source.getCarsList(params.loadSize, current)
-            Log.d("!!!", "${response.first()}")
             LoadResult.Page(
                 data = response,
                 prevKey = null,
                 nextKey = next
             )
         } catch (e: Exception) {
-            Log.d("!!!", "${e.localizedMessage}")
             LoadResult.Error(e)
         }
     }
