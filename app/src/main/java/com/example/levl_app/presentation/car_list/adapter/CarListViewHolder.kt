@@ -4,6 +4,7 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
 import com.example.levl_app.data.remote.pojo.cars_list.CarsListItem
 import com.example.levl_app.databinding.ListItemCarBinding
+import com.example.levl_app.presentation.loadFromUrl
 
 class CarListViewHolder(
     private val binding: ListItemCarBinding,
@@ -17,9 +18,7 @@ class CarListViewHolder(
 
             binding.info.text = "${item.brand_name} ${item.model_name} ${item.engine_name} ${item.year} г."
 
-            Glide.with(binding.root.context)
-                .load(item.image)
-                .into(binding.image)
+            binding.image.loadFromUrl(item.image)
         }
 
 

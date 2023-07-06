@@ -4,6 +4,7 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
 import com.example.levl_app.data.remote.pojo.posts.Post
 import com.example.levl_app.databinding.ListItemPostBinding
+import com.example.levl_app.presentation.loadFromUrl
 
 class PostViewHolder(
     private val binding: ListItemPostBinding
@@ -11,11 +12,14 @@ class PostViewHolder(
 
     fun bind(post: Post){
 
-        Glide.with(binding.root.context)
-            .load(post.img)
-            .into(binding.image)
+
+
+        binding.image.loadFromUrl(post.img)
 
         binding.post.text = post.text
+
+
+
 
     }
 

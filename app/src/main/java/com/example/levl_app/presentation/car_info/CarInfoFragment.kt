@@ -6,9 +6,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.bumptech.glide.Glide
 import com.example.levl_app.R
 import com.example.levl_app.databinding.FragmentCarInfoBinding
+import com.example.levl_app.presentation.loadFromUrl
 import kotlinx.coroutines.launch
 
 class CarInfoFragment : Fragment(R.layout.fragment_car_info) {
@@ -26,11 +26,14 @@ class CarInfoFragment : Fragment(R.layout.fragment_car_info) {
 
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.carInfo.collect{
-                Glide.with(requireContext())
-                    .load(it.car.images[0].url)
-                    .into(binding.image)
+
+                binding.image.loadFromUrl(it.car.images[0].url)
                 val car = it.car
                 binding.info.text = "${car.brand_name} ${car.model_name} ${car.engine_name} ${car.year} г."
+
+                binding.avatar.loadFromUrl(it.user.avatar.url)
+                binding.name.text = it.user.username
+
             }
         }
 
