@@ -7,7 +7,6 @@ import com.example.levl_app.data.remote.pojo.posts.Posts
 import com.example.levl_app.data.remote.source.KtorRemoteSource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.launch
 

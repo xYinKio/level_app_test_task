@@ -12,13 +12,17 @@ class CarListViewHolder(
 
     fun bind(item: CarsListItem?){
 
-        binding.root.setOnClickListener { item?.let {onCarClick(it.id)}  }
+        if (item != null){
+            binding.root.setOnClickListener { onCarClick(item.id) }
 
-        binding.info.text = item?.id?.toString()
+            binding.info.text = "${item.brand_name} ${item.model_name} ${item.engine_name} ${item.year} г."
 
-        Glide.with(binding.root.context)
-            .load(item?.image)
-            .into(binding.image)
+            Glide.with(binding.root.context)
+                .load(item.image)
+                .into(binding.image)
+        }
+
+
 
 
     }
