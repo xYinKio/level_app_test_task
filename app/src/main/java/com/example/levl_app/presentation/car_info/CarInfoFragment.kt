@@ -29,6 +29,8 @@ class CarInfoFragment : Fragment(R.layout.fragment_car_info) {
                 Glide.with(requireContext())
                     .load(it.car.images[0].url)
                     .into(binding.image)
+                val car = it.car
+                binding.info.text = "${car.brand_name} ${car.model_name} ${car.engine_name} ${car.year} г."
             }
         }
 
